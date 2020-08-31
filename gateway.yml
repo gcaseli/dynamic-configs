@@ -5,6 +5,14 @@ spring:
   cloud:
     gateway:
       routes:
+      - id: response_header_route
+        uri: https://httpbin.org
+        predicates:
+          - Path=/header/post/**
+        filters:
+          - AddResponseHeader=My-Header,Gateway
+          - SetResponseHeader=My-Header-Set, Set
+          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       - id: bin
         uri: http://httpbin.org:80
         predicates:
