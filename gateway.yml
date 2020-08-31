@@ -5,7 +5,9 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: google
-        uri: http://www.google.com.br:80
+      - id: bin
+        uri: http://httpbin.org:80
         predicates:
-        - Path=/google
+          - Path=/get
+        filters:
+          - AddRequestHeader=Hello,Gateway
