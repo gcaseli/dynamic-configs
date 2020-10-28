@@ -19,3 +19,9 @@ spring:
           - Path=/get
         filters:
           - AddRequestHeader=Hello,Gateway
+      - id: risk-analysis-digital-payment
+        uri: http://localhost:9900/
+        predicates:
+          - Path=/risk/analysis
+        filters:
+          - AddRequestHeader=Hello,Gateway
