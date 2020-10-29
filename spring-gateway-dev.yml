@@ -1,22 +1,22 @@
 server:
     port: 9902
   
-  spring:
-    cloud:
-      gateway:
-        routes:
-        - id: bin
-          uri: http://httpbin.org:80
-          predicates:
-            - Path=/get
-          filters:
-            - AddRequestHeader=Hello,Gateway-QA
-        - id: risk-analysis-digital-payment
-          uri: http://localhost:9900/
-          predicates:
-            - Path=/risk/analysis
-          filters:
-            - AddRequestHeader=Hello,Gateway
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: bin
+        uri: http://httpbin.org:80
+        predicates:
+          - Path=/get
+        filters:
+          - AddRequestHeader=Hello,Gateway-QA
+      - id: risk-analysis-digital-payment
+        uri: http://localhost:9900/
+        predicates:
+          - Path=/risk/analysis
+        filters:
+          - AddRequestHeader=Hello,Gateway
   
 management:
   endpoints:
