@@ -18,10 +18,21 @@ spring:
         predicates:
           - Path=/get
         filters:
-          - AddRequestHeader=Hello,Gateway
+          - AddRequestHeader=Hello,Gateway-DEV
       - id: risk-analysis-digital-payment
         uri: http://localhost:9900/
         predicates:
           - Path=/risk/analysis
         filters:
           - AddRequestHeader=Hello,Gateway
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,bean"
+
+logging:
+  level:
+    org.springframework: DEBUG
