@@ -18,14 +18,13 @@ server:
           filters:
             - AddRequestHeader=Hello,Gateway
   
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
-          exclude: "env,bean"
-  
-  logging:
-    level:
-      org.springframework: DEBUG
-  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,bean"
+
+logging:
+  level:
+    org.springframework: DEBUG
