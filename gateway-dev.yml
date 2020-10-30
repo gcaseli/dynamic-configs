@@ -18,7 +18,7 @@ spring:
         predicates:
           - Path=/get
         filters:
-          - AddRequestHeader=Hello,Gateway-DEV
+          - AddRequestHeader=Hello,Gateway-DEV-2
       - id: risk-analysis-digital-payment
         uri: http://localhost:9900/
         predicates:
